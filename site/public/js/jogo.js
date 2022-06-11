@@ -45,6 +45,7 @@ function inserirCavalo(nomeCavalo) {
         alert('Número máximo de registros atingido!');
     }
 
+    ipt_nome_cavalo.value = '';
     
 }
 
