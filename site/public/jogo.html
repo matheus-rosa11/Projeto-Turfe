@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turfe Game</title>
+
+    <link rel="stylesheet" href="./css/jogo.css">
+
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/jogo.js"></script>
+
+
+</head>
+
+<!-- AVISO!!! Grande parte das divs estão com ID porque não sei se podemos usar getElementByClassName -->
+
+<body>
+    <div id="tela1">
+        <div class="container_titulo">
+            <h1>Turfe Game</h1>
+        </div>
+
+        <div class="container_inicio">
+            <div id="container_menu_inicial">
+                <h2>Seja bem vindo ao Jogo Turfe!</h2>
+                <p>Quantos cavalos irão participar do turfe?</p>
+                <input id="ipt_qtd_cavalos" type="number" min="2" max="6" placeholder="Insira aqui o número de cavalos.">
+                <button onclick="validarNumeroCavalos(Number(ipt_qtd_cavalos.value))">Validar</button>
+                <button id="btn_continuar_inicial" onclick="continuar('container_ipt_nome_cavalos')" style="display: none;">Continuar</button>
+            </div>
+
+            <!-- Aqui, a quantidade de inputs pode ser de 2 a 6, como declarado acima, por isso a div -->
+
+            <div id="container_ipt_nome_cavalos">
+                <input id="ipt_nome_cavalo" type="text">
+                <button id="btn_validar_cavalo" onclick="validarCavalo()">Registrar cavalo</button>
+                <div id="container_lista_cavalos_registrados">
+                    <div id="container_titulo_lista">
+                        <h3>Cavalos Registrados</h3>
+                    </div>
+                    <ul id="lista_cavalos_registrados">
+                        <!-- AQUI TEM INNERHTML += <li>nomeCavalo</li>, precisa estilizar! -->
+                    </ul>
+                </div>
+                <button onclick="continuar('container_voltas')">Finalizar registros</button>
+            </div>
+
+            <div id="container_voltas">
+                <p>Quantas voltas terá a sua corrida?</p>
+                <input id="ipt_qtd_voltas" type="number" min="1" placeholder="Insira aqui a quantidade de voltas.">
+                <button onclick="inserirVoltas(Number(ipt_qtd_voltas))">Continuar</button>
+                <button id="btn_trocar_tela" onclick="trocarTela()" style="display: none;">Jogar!</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tela2" style="display: none;">
+        <div class="container_inicio_jogo">
+            <!-- Aqui vai ter um FOR com setInterval muito legal pra contar "em 3... 2... 1... VALENDO!" -->
+            <h2>Iniciando o jogo...</h2>
+        </div>
+
+        <div class="container_voltas">
+            <div id="voltas">
+
+            </div>
+        </div>
+    </div>
+</html>

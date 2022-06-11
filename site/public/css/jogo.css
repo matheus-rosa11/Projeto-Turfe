@@ -1,0 +1,19 @@
+.tela1 {
+    display: block;
+}
+
+.tela2 {
+    display: none;
+}
+
+#container_ipt_nome_cavalos {
+    display: none;
+}
+
+#container_voltas {
+    display: none;
+}
+
+#container_titulo_lista {
+    display: none;
+}
