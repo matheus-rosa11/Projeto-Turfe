@@ -10,8 +10,6 @@ function main() {
 function validarCavalo() {
     console.log('ENTREI NA VALIDARCAVALO()');
 
-    
-
     let nomeCavalo = ipt_nome_cavalo.value;
 
     if (isNaN(nomeCavalo)) {
@@ -70,6 +68,8 @@ function validarNumeroCavalos(ipt_numeroCavalos) {
     }
 
     numeroCavalosPermitidos = ipt_numeroCavalos;
+
+    btn_validar_numero_cavalos.style.display = 'none';
 
 }
 
